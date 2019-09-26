@@ -1,0 +1,1543 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\..\FrameXML\UI.xsd">
+
+	<!-- 폰트 선언 -->
+	<Font name="DN_FontDefaultS" inherits="GameFontNormal" virtual="true">
+		<Color r="1.0" g="1.0" b="1.0"/>		
+	</Font>
+	<Font name="DN_FontDefaultL" inherits="GameFontNormalLarge" virtual="true">
+		<Color r="1.0" g="1.0" b="1.0"/>		
+	</Font>
+	<Font name="DN_FontDefaultH" inherits="GameFontNormalHuge" virtual="true">
+		<Color r="1.0" g="1.0" b="1.0"/>		
+	</Font>
+	<Font name="DN_FontLL" inherits="DN_FontDefaultL" justifyH="LEFT" virtual="true"/>
+	<Font name="DN_FontHL" inherits="DN_FontDefaultH" justifyH="LEFT" virtual="true"/>
+	<Font name="DN_FontLC" inherits="DN_FontDefaultL" justifyH="CENTER" virtual="true"/>
+	<Font name="DN_FontHC" inherits="DN_FontDefaultH" justifyH="CENTER" virtual="true"/>
+	<Font name="DN_FontLR" inherits="DN_FontDefaultL" justifyH="RIGHT" virtual="true"/>
+	<Font name="DN_FontHR" inherits="DN_FontDefaultH" justifyH="RIGHT" virtual="true"/>
+
+	<!-- 템플릿 선언 -->
+	<SimpleHTML virtual="true" name="DN_StringTemplateLL">
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="DN_FontLL" maxlines="1">					
+					<Anchors>
+						<Anchor point="RIGHT"/>
+						<Anchor point="LEFT"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</SimpleHTML>
+	<SimpleHTML virtual="true" name="DN_StringTemplateHL">
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="DN_FontHL" maxlines="1">					
+					<Anchors>
+						<Anchor point="RIGHT"/>
+						<Anchor point="LEFT"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</SimpleHTML>
+	<SimpleHTML virtual="true" name="DN_StringTemplateLC">
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="DN_FontLC" maxlines="1">					
+					<Anchors>
+						<Anchor point="RIGHT"/>
+						<Anchor point="LEFT"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</SimpleHTML>
+	<SimpleHTML virtual="true" name="DN_StringTemplateHC">
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+					<Anchors>
+						<Anchor point="RIGHT"/>
+						<Anchor point="LEFT"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</SimpleHTML>
+	<SimpleHTML virtual="true" name="DN_StringTemplateLR">
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="DN_FontLR" maxlines="1">					
+					<Anchors>
+						<Anchor point="RIGHT"/>
+						<Anchor point="LEFT"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</SimpleHTML>
+	<SimpleHTML virtual="true" name="DN_StringTemplateHR">
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="$parentText" inherits="DN_FontHR" maxlines="1">					
+					<Anchors>
+						<Anchor point="RIGHT"/>
+						<Anchor point="LEFT"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</SimpleHTML>
+
+	<Button virtual="true" name ="DN_RowTemplate">
+		<Size>
+			<AbsDimension y="30" x="820"/>
+		</Size>
+		<Frames>
+			<Frame inherits="DN_StringTemplateLL" name="$parentGUID">
+				<Size x="35" y="30"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="LEFT" relativeTo="$parent"/>
+				</Anchors>
+			</Frame>
+
+			<Frame inherits="DN_StringTemplateHC" name="$parentLevel">
+				<Size x="40" y="30"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="LEFT" relativeTo="$parent"/>
+				</Anchors>
+				<Backdrop edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="1" right="1" top="1" bottom="1" />
+					</BackgroundInsets>
+					<EdgeSize val="20"/>
+				</Backdrop>				
+			</Frame>
+
+			<Frame inherits="DN_StringTemplateHC" name="$parentName">
+				<Size x="150" y="30"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="RIGHT" relativeTo="$parentLevel"/>
+				</Anchors>
+				<Backdrop edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="1" right="1" top="1" bottom="1" />
+					</BackgroundInsets>
+					<EdgeSize val="20"/>
+				</Backdrop>
+			</Frame>
+
+			<Frame inherits="DN_StringTemplateLC" name="$parentRace">
+				<Size x="130" y="30"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="RIGHT" relativeTo="$parentName"/>
+				</Anchors>
+				<Backdrop edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="1" right="1" top="1" bottom="1" />
+					</BackgroundInsets>
+					<EdgeSize val="20"/>
+				</Backdrop>
+			</Frame>
+
+			<Frame inherits="DN_StringTemplateLC" name="$parentClass">
+				<Size x="100" y="30"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="RIGHT" relativeTo="$parentRace"/>
+				</Anchors>
+				<Backdrop edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="1" right="1" top="1" bottom="1" />
+					</BackgroundInsets>
+					<EdgeSize val="20"/>
+				</Backdrop>
+			</Frame>
+
+			<Frame inherits="DN_StringTemplateLC" name="$parentGender">
+				<Size x="50" y="30"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="RIGHT" relativeTo="$parentClass"/>
+				</Anchors>
+				<Backdrop edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="1" right="1" top="1" bottom="1" />
+					</BackgroundInsets>
+					<EdgeSize val="20"/>
+				</Backdrop>
+			</Frame>
+			<Frame inherits="DN_StringTemplateLC" name="$parentTime">
+				<Size x="250" y="30"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="RIGHT" relativeTo="$parentGender"/>
+				</Anchors>
+				<Backdrop edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="1" right="1" top="1" bottom="1" />
+					</BackgroundInsets>
+					<EdgeSize val="20"/>
+				</Backdrop>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(self);</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Frame>
+			<Frame inherits="DN_StringTemplateLC" name="$parentAttack">
+				<Size x="50" y="30"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="RIGHT" relativeTo="$parentTime"/>
+				</Anchors>
+				<Backdrop edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="1" right="1" top="1" bottom="1" />
+					</BackgroundInsets>
+					<EdgeSize val="20"/>
+				</Backdrop>
+			</Frame>
+			<Frame inherits="DN_StringTemplateLC" name="$parentDeath">
+				<Size x="50" y="30"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="RIGHT" relativeTo="$parentAttack"/>
+				</Anchors>
+				<Backdrop edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="1" right="1" top="1" bottom="1" />
+					</BackgroundInsets>
+					<EdgeSize val="20"/>
+				</Backdrop>
+			</Frame>
+			<Button name="$parentDeleteButton">
+				<Size x="40" y="40"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="RIGHT" relativeTo="$parentDeath"/>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Tooltip("DELETE", self);</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+					<OnClick>DN_Data_Func:remove(self);</OnClick>
+				</Scripts>
+				<NormalTexture file="Interface\Buttons\CancelButton-Up"/>
+				<PushedTexture file="Interface\Buttons\CancelButton-Down"/>
+				<HighlightTexture file="Interface\Buttons\CancelButton-Highlight" alphaMode="ADD"/>
+			</Button>
+			<Button name="$parentMemoButton">
+				<Size x="32" y="32"/>
+				<Anchors>
+					<Anchor point ="LEFT" relativePoint="RIGHT" relativeTo="$parentDeleteButton"/>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Tooltip("MEMO", self);</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+					<OnClick>DN_Data_Func:Memo_Window(self)</OnClick>
+				</Scripts>	
+				<NormalTexture file="Interface\Buttons\UI-GuildButton-PublicNote-Up"/>
+			</Button>
+			<EditBox name="$parentEditBox" letters="80" hidden="true">
+				<Size x="100" y="30" />
+				<Anchors>
+					<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$parentMemoButton">
+						<Offset x="10" y="-10" />
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<Texture file="Interface\ChatFrame\UI-ChatInputBorder-Left">
+							<Size x="60" y="30" />
+							<Anchors>
+								<Anchor point="LEFT">
+									<Offset x="-10" y="0" />
+								</Anchor>
+							</Anchors>
+							<TexCoords left="0" right="0.2" top="0" bottom="1.0"/>
+						</Texture>
+						<Texture file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+							<Size x="60" y="30" />
+							<Anchors>
+								<Anchor point="RIGHT">
+									<Offset x="10" y="0" />
+								</Anchor>
+ 							</Anchors>
+							<TexCoords left="0.7" right="1.0" top="0" bottom="1.0"/>
+						</Texture>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnEditFocusLost>
+						DN_Data_Func:Memo_Saved(self);
+					</OnEditFocusLost>
+					<OnEnterPressed>
+						DN_Data_Func:Memo_Saved(self);
+					</OnEnterPressed>
+					<OnLoad>
+					</OnLoad>
+				</Scripts>
+				<FontString inherits="ChatFontNormal" />
+			</EditBox>
+		</Frames>
+	</Button>
+	<Frame name="DN_FrameTemplate" frameStrata="MEDIUM" virtual="true">
+		<Backdrop bgFile="Interface\ChatFrame\ChatFrameBackground" edgeFile="Interface\ChatFrame\ChatFrameBackground" tile="false">
+			<BackgroundInsets>
+				<AbsInset left="0" right="0" top="0" bottom="0" />
+			</BackgroundInsets>
+			<EdgeSize>
+				<AbsValue val="2" />
+			</EdgeSize>
+		</Backdrop>
+		<Scripts>
+			<OnLoad>
+				self:SetBackdropBorderColor(0.15, 0.15, 0.15, 1);
+				self:SetBackdropColor(0, 0, 0, 1);
+			</OnLoad>
+		</Scripts>
+	</Frame>
+
+	<!-- 프레임 -->
+	<Frame name="DN_Main" parent="UIParent" hidden="true" movable="true" enableMouse="true" enableKeyboard="true" toplevel="true">
+            	<Size>
+	                   	<AbsDimension x="960" y="680"/>
+	            </Size>
+		<Anchors>
+			<Anchor point="CENTER" relativeTo="UIParent" relativePoint="CENTER"/>
+		</Anchors> 
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<EdgeSize val="16"/>
+			<TileSize val="32"/>
+			<BackgroundInsets left="5" right="5" top="5" bottom="5"/>
+		</Backdrop>
+		<Scripts>
+			<OnLoad>
+				tinsert(UISpecialFrames,33,"DN_Main");				
+			</OnLoad>
+            	</Scripts>
+		<Frames>
+			<Frame name="DN_Setting" parent="UIParent" hidden="true" movable="true" enableMouse="true" enableKeyboard="true" toplevel="true">
+            			<Size>
+	                		   	<AbsDimension x="400" y="300"/>
+			            </Size>
+				<Anchors>
+					<Anchor point="TOP" relativeTo="DN_Main" relativePoint="TOP"/>
+				</Anchors> 
+				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+					<EdgeSize val="16"/>
+					<TileSize val="32"/>
+					<BackgroundInsets left="5" right="5" top="5" bottom="5"/>
+				</Backdrop>
+				<Scripts>
+					<OnLoad>
+						
+					</OnLoad>
+					<OnShow>
+						tremove(UISpecialFrames,33);
+						tinsert(UISpecialFrames,33,"DN_Setting");
+					</OnShow>
+					<OnHide>
+						tremove(UISpecialFrames,33);	
+						tinsert(UISpecialFrames,33,"DN_Main");
+					</OnHide>
+            			</Scripts>
+				<Frames>
+					<Frame name="$parentNameplate" parent="DN_Setting" toplevel="true">
+						<Size>
+	                		   			<AbsDimension x="350" y="250"/>
+					            </Size>
+						<Anchors>
+							<Anchor point="TOP" relativeTo="$parent" relativePoint="TOP">
+								<Offset>
+									<AbsDimension x="0" y="-40"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+									<Anchors>
+										<Anchor point="TOP">
+											<Offset>
+												<AbsDimension x="0" y="-10"/>
+											</Offset>
+										</Anchor>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Frames>
+							<Frame name="$parentExample">
+								<Size>
+									<AbsDimension x="200" y="100"/>
+								</Size>
+								<Anchors>
+									<Anchor point="TOP" relativeTo="$parent" relativePoint="TOP">
+										<Offset>
+											<AbsDimension x="0" y="-70"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<Frame name="$parentname">
+										<Size>
+											<AbsDimension x="100" y="100"/>
+										</Size>
+										<Anchors>
+											<Anchor point="CENTER" relativeTo="$parent" relativePoint="CENTER">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="OVERLAY">
+												<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+													<Color r="1.0" g="0" b="0"/>
+													<Anchors>
+														<Anchor point="TOP">
+															<Offset>
+																<AbsDimension x="0" y="0"/>
+															</Offset>
+														</Anchor>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+									</Frame>
+									<Frame name="$parenticon">
+										<Size>
+											<AbsDimension x="36" y="36"/>
+										</Size>
+										<Layers>
+											<Layer level="ARTWORK">
+												<Texture name="$parentArt" file="interface/worldmap/glowskull_64.blp">
+													<Anchors>
+														<Anchor point="TOPLEFT" relativePoint="TOPLEFT"/>
+														<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+													</Anchors>
+													<TexCoords left="0" top="0.5" right="0.5" bottom="1"/>
+												</Texture>
+											</Layer>
+										</Layers>
+										<Anchors>
+											<Anchor point="CENTER" relativeTo="$parentname" relativePoint="CENTER">
+												<Offset>
+													<AbsDimension x="0" y="0"/>
+												</Offset>
+											</Anchor>
+										</Anchors>
+									</Frame>
+								</Frames>
+							</Frame>
+							<Frame name="$parentCheckButton">
+								<Size>
+									<AbsDimension x="150" y="100"/>
+								</Size>
+								<Anchors>
+									<Anchor point="TOPLEFT" relativeTo="$parentExample" relativePoint="TOPLEFT">
+										<Offset>
+											<AbsDimension x="-70" y="-70"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Frames>
+									<CheckButton name="$parent1" inherits="OptionsCheckButtonTemplate" checked="false">
+										<Anchors>
+											<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+											<Offset>
+												<AbsDimension x="10" y="-10"/>
+											</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="OVERLAY">
+												<FontString name="$parentText" inherits="DN_FontLL" maxlines="1">					
+													<Anchors>
+														<Anchor point="RIGHT"/>
+														<Anchor point="LEFT"/>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>
+												DN_Set_Func:Check_Button(1)
+											</OnClick>
+										</Scripts>
+									</CheckButton>
+									<CheckButton name="$parent2" inherits="OptionsCheckButtonTemplate" checked="false">
+										<Anchors>
+											<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+											<Offset>
+												<AbsDimension x="80" y="-40"/>
+											</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="OVERLAY">
+												<FontString name="$parentText" inherits="DN_FontLL" maxlines="1">					
+													<Anchors>
+														<Anchor point="RIGHT"/>
+														<Anchor point="LEFT"/>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>
+												DN_Set_Func:Check_Button(2)
+											</OnClick>
+										</Scripts>
+									</CheckButton>
+									<CheckButton name="$parent3" inherits="OptionsCheckButtonTemplate" checked="false">
+										<Anchors>
+											<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+											<Offset>
+												<AbsDimension x="80" y="-70"/>
+											</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="OVERLAY">
+												<FontString name="$parentText" inherits="DN_FontLL" maxlines="1">					
+													<Anchors>
+														<Anchor point="RIGHT"/>
+														<Anchor point="LEFT"/>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>
+												DN_Set_Func:Check_Button(3)
+											</OnClick>
+										</Scripts>
+									</CheckButton>
+									<CheckButton name="$parent4" inherits="OptionsCheckButtonTemplate" checked="false">
+										<Anchors>
+											<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+											<Offset>
+												<AbsDimension x="10" y="-40"/>
+											</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="OVERLAY">
+												<FontString name="$parentText" inherits="DN_FontLL" maxlines="1">					
+													<Anchors>
+														<Anchor point="RIGHT"/>
+														<Anchor point="LEFT"/>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>
+												DN_Set_Func:Check_Button(4)
+											</OnClick>
+										</Scripts>
+									</CheckButton>
+									<CheckButton name="$parent5" inherits="OptionsCheckButtonTemplate" checked="false">
+										<Anchors>
+											<Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="TOPLEFT">
+											<Offset>
+												<AbsDimension x="10" y="-70"/>
+											</Offset>
+											</Anchor>
+										</Anchors>
+										<Layers>
+											<Layer level="OVERLAY">
+												<FontString name="$parentText" inherits="DN_FontLL" maxlines="1">					
+													<Anchors>
+														<Anchor point="RIGHT"/>
+														<Anchor point="LEFT"/>
+													</Anchors>
+												</FontString>
+											</Layer>
+										</Layers>
+										<Scripts>
+											<OnClick>
+												DN_Set_Func:Check_Button(5)
+											</OnClick>
+										</Scripts>
+									</CheckButton>
+								</Frames>
+							</Frame>
+							<Slider name="$parentX" orientation="HORIZONTAL" enableMouse="true" minvalue="-20" maxvalue="20" valueStep="1.0" stepsPerPage="1.0">
+								<Size>
+	                		   					<AbsDimension x="150" y="20"/>
+							            </Size>
+								<Anchors>
+									<Anchor point="TOPLEFT" relativeTo="$parentExample" relativePoint="TOP">
+										<Offset>
+											<AbsDimension x="10" y="-80"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="OVERLAY">
+										<FontString name="$parentText1" inherits="DN_FontLC" maxlines="1">					
+											<Anchors>
+												<Anchor point="TOP">
+													<Offset x="0" y="12" />
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentText2" inherits="DN_FontLC" maxlines="1">					
+											<Anchors>
+												<Anchor point="BOTTOM">
+													<Offset x="0" y="-10" />
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<HitRectInsets left="10" right="0" top="0" bottom="10"/>
+								<Backdrop bgFile="Interface\Buttons\UI-SliderBar-Background"
+									edgeFile="Interface\Buttons\UI-SliderBar-Border" tile="true">
+									<EdgeSize val="8"/>
+									<TileSize val="8"/>
+									<BackgroundInsets left="3" right="3" top="6" bottom="6"/>
+								</Backdrop>
+								<ThumbTexture name="$parentThumb" file="Interface\Buttons\UI-SliderBar-Button-Horizontal">
+									<Size x="32" y="32"/>
+								</ThumbTexture>
+								<Scripts>
+									<OnLoad>
+										self:SetObeyStepOnDrag(true)
+									</OnLoad>
+									<OnValueChanged>
+										DN_Set_Func:DN_value_Changed(self);
+									</OnValueChanged>
+								</Scripts>
+							</Slider>
+							<Slider name="$parentY" orientation="HORIZONTAL" enableMouse="true" minvalue="-20" maxvalue="20" valueStep="1.0" stepsPerPage="1.0">
+								<Size>
+	                		   					<AbsDimension x="150" y="20"/>
+							            </Size>
+								<Anchors>
+									<Anchor point="TOPLEFT" relativeTo="$parentX" relativePoint="TOPLEFT">
+										<Offset>
+											<AbsDimension x="0" y="-50"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Layers>
+									<Layer level="OVERLAY">
+										<FontString name="$parentText1" inherits="DN_FontLC" maxlines="1">					
+											<Anchors>
+												<Anchor point="TOP">
+													<Offset x="0" y="12" />
+												</Anchor>
+											</Anchors>
+										</FontString>
+										<FontString name="$parentText2" inherits="DN_FontLC" maxlines="1">					
+											<Anchors>
+												<Anchor point="BOTTOM">
+													<Offset x="0" y="-10" />
+												</Anchor>
+											</Anchors>
+										</FontString>
+									</Layer>
+								</Layers>
+								<HitRectInsets left="10" right="0" top="0" bottom="10"/>
+								<Backdrop bgFile="Interface\Buttons\UI-SliderBar-Background"
+									edgeFile="Interface\Buttons\UI-SliderBar-Border" tile="true">
+									<EdgeSize val="8"/>
+									<TileSize val="8"/>
+									<BackgroundInsets left="3" right="3" top="6" bottom="6"/>
+								</Backdrop>
+								<ThumbTexture name="$parentThumb" file="Interface\Buttons\UI-SliderBar-Button-Horizontal">
+									<Size x="32" y="32"/>
+								</ThumbTexture>
+								<Scripts>
+									<OnLoad>
+										self:SetObeyStepOnDrag(true)
+									</OnLoad>
+									<OnValueChanged>
+										DN_Set_Func:DN_value_Changed(self);
+									</OnValueChanged>
+								</Scripts>
+							</Slider>
+						</Frames>
+						<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+							<EdgeSize val="8"/>
+							<TileSize val="32"/>
+							<BackgroundInsets left="5" right="5" top="5" bottom="5"/>
+						</Backdrop>
+					</Frame>
+				</Frames>
+			</Frame>
+			<Frame name="$parentTitle" enableMouse="true" inherits="DN_FrameTemplate">
+				<Size>
+					<AbsDimension x="960" y="40"/>
+				</Size>
+				<Anchors>
+					<Anchor point="TOP" relativeTo="DN_Main" relativePoint="TOP">
+						<Offset>
+							<AbsDimension x="0" y="-5"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">
+							<Color r="1.0" g="0" b="0"/>						
+							<Anchors>
+								<Anchor point="RIGHT"/>
+								<Anchor point="LEFT"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Scripts>
+					<OnMouseDown>DN_Main:StartMoving();</OnMouseDown>
+					<OnMouseUp>
+						DN_Main:StopMovingOrSizing();
+					</OnMouseUp>
+				</Scripts>
+				<Frames>
+					<Button name="$parentActiveButton">
+						<Size>
+							<AbsDimension x="40" y="40"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT">
+								<Offset>
+									<AbsDimension x="5" y="-5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>DN_Tip_Func:Tooltip("START", self);</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>DN_Data_Func:Menu_Clicked("ON", nil, self);DN_Tip_Func:Tooltip("START", self);</OnClick>
+						</Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+						<NormalTexture file="Interface\WorldMap\Skull_64Green"></NormalTexture>
+					</Button>
+					<Button enableMouse="true">
+						<Size>
+							<AbsDimension x="40" y="40"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentActiveButton" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<NormalTexture file="Interface\COMMON\VOICECHAT-SPEAKER"/>				
+						<Frames>
+							<Button name="$parentSoundButton">
+								<Size>
+									<AbsDimension x="40" y="40"/>
+								</Size>
+								<Anchors>
+									<Anchor point="TOPLEFT">
+										<Offset>
+											<AbsDimension x="0" y="0"/>
+										</Offset>
+									</Anchor>
+								</Anchors>
+								<Scripts>
+									<OnEnter>DN_Tip_Func:Tooltip("BGM", self);</OnEnter>
+									<OnLeave>GameTooltip:Hide();</OnLeave>
+									<OnClick>DN_Data_Func:Menu_Clicked("BGM", nil, self);DN_Tip_Func:Tooltip("BGM", self);</OnClick>
+								</Scripts>
+								<NormalTexture file="Interface\COMMON\VOICECHAT-SPEAKER"/>
+							</Button>
+						</Frames>
+					</Button>
+					<Button name="$parentInitialButton">
+						<Size>
+							<AbsDimension x="30" y="30"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentSoundButton" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-5" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>DN_Tip_Func:Tooltip("INITIAL", self);</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>DN_Main_Func:DN_Initial();DN_Data_Sorting:DN_Filter(5,true);DN_Main_Func:DN_Refresh();</OnClick>
+						</Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+						<NormalTexture file="Interface\Buttons\UI-RefreshButton"/>
+					</Button>
+					<Button name="$parentSettingButton">
+						<Size>
+							<AbsDimension x="30" y="30"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentInitialButton" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>DN_Tip_Func:Tooltip("SETUP", self);</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>DN_Setting:Show();</OnClick>
+						</Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+						<NormalTexture file="Interface\Buttons\ui-optionsbutton"/>
+					</Button>		
+					<Button name="$parentCloseButton">
+						<Size>
+							<AbsDimension x="32" y="32"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPRIGHT">
+								<Offset>
+									<AbsDimension x="-5" y="-5"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>DN_Tip_Func:Tooltip("CLOSE", self);</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>DN_Main:Hide();</OnClick>
+						</Scripts>
+						<NormalTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Up"/>
+						<PushedTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Down"/>
+						<HighlightTexture file="Interface\Buttons\UI-Panel-MinimizeButton-Highlight" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentMaxButton">
+						<Size>
+							<AbsDimension x="22" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="RIGHT" relativeTo="$parentCloseButton" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>DN_Tip_Func:Tooltip("MAXIMIZE", self);</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>DN_Data_Func:Menu_Clicked("MAX", nil, self);</OnClick>
+						</Scripts>
+						<NormalTexture file="Interface\Buttons\UI-PlusButton-UP"/>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentMinButton">
+						<Size>
+							<AbsDimension x="22" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="RIGHT" relativeTo="$parentMaxButton" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>DN_Tip_Func:Tooltip("MINIMIZE", self);</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>DN_Data_Func:Menu_Clicked("MIN", nil, self);</OnClick>
+						</Scripts>
+						<NormalTexture file="Interface\Buttons\UI-MinusButton-UP"/>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentDecreaseButton">
+						<Size>
+							<AbsDimension x="24" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="RIGHT" relativeTo="$parentMinButton" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>DN_Tip_Func:Tooltip("LINEDEC", self);</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>DN_Data_Func:Menu_Clicked("DEC", nil, self);</OnClick>
+						</Scripts>
+						<NormalTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollUp-Up"/>
+						<PushedTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollUp-Down"/>
+						<DisabledTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollUp-Disabled"/>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentIncreaseButton">
+						<Size>
+							<AbsDimension x="24" y="24"/>
+						</Size>
+						<Anchors>
+							<Anchor point="RIGHT" relativeTo="$parentDecreaseButton" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnEnter>DN_Tip_Func:Tooltip("LINEINC", self);</OnEnter>
+							<OnLeave>GameTooltip:Hide();</OnLeave>
+							<OnClick>DN_Data_Func:Menu_Clicked("INC", nil, self);</OnClick>
+						</Scripts>
+						<NormalTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollDown-Up"/>
+						<PushedTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollDown-Down"/>
+						<DisabledTexture file="Interface\ChatFrame\UI-ChatIcon-ScrollDown-Disabled"/>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+				</Frames>
+			</Frame>
+			<Frame name="$parentFilter" enableMouse="true">
+				<Size>
+					<AbsDimension x="960" y="40"/>
+				</Size>
+				<Backdrop bgFile="Interface\ChatFrame\ChatFrameBackground" edgeFile="Interface\ChatFrame\ChatFrameBackground" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="0" right="1.0" top="0" bottom="1.0" />
+					</BackgroundInsets>
+					<EdgeSize>
+						<AbsValue val="2" />
+					</EdgeSize>
+				</Backdrop>
+				<Anchors>
+					<Anchor point="TOP" relativeTo="DN_MainTitle" relativePoint="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="0"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnLoad>
+						self:SetBackdropBorderColor(0.15, 0.15, 0.15, 1);
+						self:SetBackdropColor(0, 0, 0, 0.6);
+					</OnLoad>
+				</Scripts>
+				<Frames>
+					<Button name="$parentLevel">
+						<Size>
+							<AbsDimension y="30" x="60"/>
+						</Size>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+									<Anchors>
+										<Anchor point="RIGHT"/>
+										<Anchor point="LEFT"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								DN_Data_Sorting:DN_Filter(0,false);
+							</OnClick>
+						</Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentName">
+						<Size>
+							<AbsDimension y="30" x="60"/>
+						</Size>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+									<Anchors>
+										<Anchor point="RIGHT"/>
+										<Anchor point="LEFT"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentLevel" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="40" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								DN_Data_Sorting:DN_Filter(1,false);
+							</OnClick>
+						</Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentRace">
+						<Size>
+							<AbsDimension y="30" x="60"/>
+						</Size>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+									<Anchors>
+										<Anchor point="RIGHT"/>
+										<Anchor point="LEFT"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentName" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="75" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								DN_Data_Sorting:DN_Filter(2,false);
+							</OnClick>
+						</Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentClass">
+						<Size>
+							<AbsDimension y="30" x="60"/>
+						</Size>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+									<Anchors>
+										<Anchor point="RIGHT"/>
+										<Anchor point="LEFT"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentRace" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="55" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								DN_Data_Sorting:DN_Filter(3,false);
+							</OnClick>
+						</Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentGender">
+						<Size>
+							<AbsDimension y="30" x="60"/>
+						</Size>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+									<Anchors>
+										<Anchor point="RIGHT"/>
+										<Anchor point="LEFT"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentClass" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="15" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								DN_Data_Sorting:DN_Filter(4,false);
+							</OnClick>
+						</Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentTime">
+						<Size>
+							<AbsDimension x="120" y="30"/>
+						</Size>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+									<Anchors>
+										<Anchor point="RIGHT"/>
+										<Anchor point="LEFT"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentGender" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="60" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								DN_Data_Sorting:DN_Filter(5,false);
+							</OnClick>
+						</Scripts>
+						<HighlightTexture file="Interface\Buttons\ButtonHilight-Round" alphaMode="ADD"/>
+					</Button>
+					<Button name="$parentAttack">
+						<Size>
+							<AbsDimension x="40" y="30"/>
+						</Size>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+									<Anchors>
+										<Anchor point="RIGHT"/>
+										<Anchor point="LEFT"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentTime" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="70" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+							</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentDeath">
+						<Size>
+							<AbsDimension x="40" y="30"/>
+						</Size>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontHC" maxlines="1">					
+									<Anchors>
+										<Anchor point="RIGHT"/>
+										<Anchor point="LEFT"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentAttack" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+							</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentCancel">
+						<Size>
+							<AbsDimension x="30" y="30"/>
+						</Size>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontLC" maxlines="1">					
+									<Anchors>
+										<Anchor point="RIGHT"/>
+										<Anchor point="LEFT"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentDeath" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+							</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentMemo">
+						<Size>
+							<AbsDimension x="30" y="30"/>
+						</Size>
+						<Layers>
+							<Layer level="OVERLAY">
+								<FontString name="$parentText" inherits="DN_FontLC" maxlines="1">					
+									<Anchors>
+										<Anchor point="RIGHT"/>
+										<Anchor point="LEFT"/>
+									</Anchors>
+								</FontString>
+							</Layer>
+						</Layers>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentCancel" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="5" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+							</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+			<Button name="$parentRow1" inherits="DN_RowTemplate" id="1">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentFilter" relativePoint="BOTTOMLEFT">
+						<Offset x="20" y="-10"/>
+					</Anchor>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow1TimeText, DN_MainRow1GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow2" inherits="DN_RowTemplate" id="2">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow1" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow2TimeText, DN_MainRow2GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow3" inherits="DN_RowTemplate" id="3">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow2" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow3TimeText, DN_MainRow3GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow4" inherits="DN_RowTemplate" id="4">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow3" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow4TimeText, DN_MainRow4GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow5" inherits="DN_RowTemplate" id="5">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow4" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow5TimeText, DN_MainRow5GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow6" inherits="DN_RowTemplate" id="6">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow5" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow6TimeText, DN_MainRow6GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow7" inherits="DN_RowTemplate" id="7">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow6" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow7TimeText, DN_MainRow7GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow8" inherits="DN_RowTemplate" id="8">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow7" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow8TimeText, DN_MainRow8GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow9" inherits="DN_RowTemplate" id="9">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow8" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow9TimeText, DN_MainRow9GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow10" inherits="DN_RowTemplate" id="10">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow9" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow10TimeText, DN_MainRow10GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow11" inherits="DN_RowTemplate" id="11">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow10" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow11TimeText, DN_MainRow11GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow12" inherits="DN_RowTemplate" id="12">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow11" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow12TimeText, DN_MainRow12GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow13" inherits="DN_RowTemplate" id="13">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow12" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow13TimeText, DN_MainRow13GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow14" inherits="DN_RowTemplate" id="14">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow13" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow14TimeText, DN_MainRow14GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow15" inherits="DN_RowTemplate" id="15">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow14" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow15TimeText, DN_MainRow15GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow16" inherits="DN_RowTemplate" id="16">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow15" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow16TimeText, DN_MainRow16GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow17" inherits="DN_RowTemplate" id="17">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow16" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow17TimeText, DN_MainRow17GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow18" inherits="DN_RowTemplate" id="18">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow17" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow18TimeText, DN_MainRow18GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow19" inherits="DN_RowTemplate" id="19">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow18" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow19TimeText, DN_MainRow19GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+
+			<Button name="$parentRow20" inherits="DN_RowTemplate" id="20">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentRow19" relativePoint="BOTTOMLEFT"/>
+					<Anchor point="RIGHT" relativeTo="$parent" relativePoint="RIGHT">
+						<Offset x="-35" y="0"/>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnEnter>DN_Tip_Func:Time(DN_MainRow20TimeText, DN_MainRow20GUIDText:GetText());</OnEnter>
+					<OnLeave>GameTooltip:Hide();</OnLeave>
+				</Scripts>
+			</Button>
+			<ScrollFrame name="$parentScrollFrame" inherits="FauxScrollFrameTemplate" hidden="false">
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-15" y="-30"/>
+						</Offset>
+					</Anchor>
+					<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="$parent">
+						<Offset>
+							<AbsDimension x="-35" y="10"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Frames>
+					<Frame name="$parentTop">
+						<Size>
+							<AbsDimension x="32" y="28"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="10"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								
+							</Layer>
+						</Layers>
+					</Frame>
+					<Frame name="$parentBottom">
+						<Size>
+							<AbsDimension x="32" y="28"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
+								<Offset>
+									<AbsDimension x="-2" y="-2"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<Texture name="$parentArt" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+									<Anchors>
+										<Anchor point="TOPLEFT" relativePoint="TOPLEFT"/>
+										<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+									</Anchors>
+									<TexCoords left="0.515625" top="0.313725490196078" right="1.0"	bottom="0.4140625"/>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+					<Frame name="$parentMiddle">
+						<Size>
+							<AbsDimension x="32"/>
+						</Size>
+						<Anchors>
+							<Anchor point="TOP" relativeTo= "$parentTop" relativePoint="BOTTOM">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+							<Anchor point="BOTTOM" relativeTo= "$parentBottom" relativePoint="TOP">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<Texture name="$parentMiddle" file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+									<Anchors>
+										<Anchor point="TOPLEFT" relativePoint="TOPLEFT"/>
+										<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT"/>
+									</Anchors>
+									<TexCoords left="0" top="0.109803921568627" right="0.484375" bottom="1"/>
+								</Texture>
+							</Layer>
+						</Layers>
+					</Frame>
+				</Frames>
+				<Scripts>
+					<OnVerticalScroll>
+						FauxScrollFrame_OnVerticalScroll(self, offset, 25, DN_Main_Func:DN_Refresh());
+					</OnVerticalScroll>
+					<OnShow>DN_Main_Func:DN_Refresh();</OnShow>
+				</Scripts>
+			</ScrollFrame>
+		</Frames>		
+	</Frame>
+ </Ui>

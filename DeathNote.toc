@@ -1,0 +1,13 @@
+## interface : 11302
+## Title : DeathNote
+## Notes : 당신을 공격한 모든 플레이어를 저장합니다.
+## Author : 베리나이
+## SavedVariables: DN_Data, DN_Setting_Data
+## SavedVariablesPerCharacter : DN_Data, DN_Setting_Data
+
+DN_Setting.lua
+DeathNote.xml
+Locale\koKR\locale.lua
+Locale\enUS\locale.lua
+Locale\DN_Locale.lua
+DN_Main.lua
