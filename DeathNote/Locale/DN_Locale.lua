@@ -5,6 +5,8 @@ function DN_Locale:Localization()
 	local locale = GetLocale()
 	if locale == "koKR" then
 		koKR_Localization()
+	elseif locale =="ruRU" then
+		ruRU_Localization()
 	else
 		enUS_Localization()
 	end
